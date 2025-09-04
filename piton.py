@@ -1,0 +1,5 @@
+a = int(input())
+print ("asd", a)
+b = input()
+print (b)
+print (type(b), type(a))
