@@ -186,12 +186,3 @@
 #     print(num2,num)
 # elif num < num2:
 #     print(num,num2)
-
-metr = int(input("Введите количество метров"))
-choice = int(input("Перевести метры в мили? дюймы? или ярды?"))
-if choice == 1:
-       print (metr * 0.000621, "милей")
-if choice == 2:
-       print (metr * 39,37, "дюймов")
-if choice == 3:
-       print (metr * 1.09, "ярдов")
