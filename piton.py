@@ -31,6 +31,7 @@
 # print(result)
 
 
+
 # Задание 1 / Домашнее задание за 05.09
 # a = int(input())
 # b = int(input())
@@ -53,6 +54,7 @@
 # print ("you're busy  making other plans")
 # print("")
 # print("\t"*10,"John Lennon")
+
 #Задание 5
 # print ("you're busy  making other plans \n",
 #        "\n", 
@@ -84,8 +86,6 @@
 #               break
 #        default:
 #        print("error")
-
-
 #задание 1 / Домашнее задание за 08.09
 # a = int(input("Введите число "))
 # b = int(input("Введите "))
@@ -186,3 +186,12 @@
 #     print(num2,num)
 # elif num < num2:
 #     print(num,num2)
+
+metr = int(input("Введите количество метров"))
+choice = int(input("Перевести метры в мили? дюймы? или ярды?"))
+if choice == 1:
+       print (metr * 0.000621, "милей")
+if choice == 2:
+       print (metr * 39,37, "дюймов")
+if choice == 3:
+       print (metr * 1.09, "ярдов")
