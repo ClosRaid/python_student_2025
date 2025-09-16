@@ -186,3 +186,36 @@
 #     print(num2,num)
 # elif num < num2:
 #     print(num,num2)
+
+# for i in range(0, 10,): условие цикла
+#        print ("hi", i)    #выполнение внутреннего кода
+#while (условие)
+# while True:
+#        print("*")
+# value_user = int(input("введите число для суммирования"))
+# sum_user = 0
+# while value_user != 0:
+#        value_user = int(input("введите число для суммирования"))
+#        sum_user = sum_user + value_user
+# print("Сумма чисел пользователя:", sum_user)
+# for i in range(0, 6):
+#        print('*' * i)
+# for i in range(0, 6):
+#        for j in range(0, i+1):
+#               print("*", end = ' ')
+#        print()
+#пользователь вводит строку
+#Необходимо проверить её на палиндром
+user_str = input("введите строку для проверки на палнидром")
+counter_letter = len(user_str) #функция подсчёта количества элементов
+value_user = True #переменная для проверки палиндрома
+for letter_begin in range (0, counter_letter):
+       for letter_end in (counter_letter, 0, 3):
+              print("проверяется буква:",user_str[letter_begin])
+              print("проверяется буква:",user_str[letter_end])
+              if letter_begin != letter_end:
+                     value_user = False
+                     break
+       if value_user == False:
+              print("не является палиндромом")
+              break
