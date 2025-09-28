@@ -206,16 +206,140 @@
 #        print()
 #пользователь вводит строку
 #Необходимо проверить её на палиндром
-user_str = input("введите строку для проверки на палнидром")
-counter_letter = len(user_str) #функция подсчёта количества элементов
-value_user = True #переменная для проверки палиндрома
-for letter_begin in range (0, counter_letter):
-       for letter_end in (counter_letter, 0, 3):
-              print("проверяется буква:",user_str[letter_begin])
-              print("проверяется буква:",user_str[letter_end])
-              if letter_begin != letter_end:
-                     value_user = False
-                     break
-       if value_user == False:
-              print("не является палиндромом")
-              break
+# user_str = input("введите строку для проверки на палнидром")
+# counter_letter = len(user_str) #функция подсчёта количества элементов
+# value_user = True #переменная для проверки палиндрома
+# for letter_begin in range (0, counter_letter):
+#        for letter_end in (counter_letter, 0, 3):
+#               print("проверяется буква:",user_str[letter_begin])
+#               print("проверяется буква:",user_str[letter_end])
+#               if letter_begin != letter_end:
+#                      value_user = False
+#                      break
+#        if value_user == False:
+#               print("не является палиндромом")
+#               break
+# #строки
+# string = "Hello World"
+# print(string[0])
+# print(len(string))
+# print(string*10)
+# print(string+"!!!")
+# #срез - это подстрока или подмассив
+# #извлеченный из основного
+# #может состоять из 1-n символов
+# #или элементов
+# #1 взятие одного символа
+# #2. срез с двумя параметрами
+# print(string[0:6])
+# #[a:b] - интервал символов
+# #find and rfind
+# #нужны для поиска подстрок в строке
+# print(string.find("l")) #Вернёт индекс элемента,
+# #если элемента нет, то -1
+# print(string.rfind("l"))
+# #find - ищет слева направо
+# #rfind - ищет справа налево
+# #Метод REPLACE - ЗАМЕНА одной строки на другую
+# #print(string.replace(_old: 'l',_new: 'l', _count=3))
+# #метод Count - считает кол-во вхождений символа в строку
+# print(string.count('l')) #3
+#список(массив) - последовательность элементов
+# #пронумерованных от 0, как символы в строке
+# Primes = [2,3,5,7,11,13]
+# print(Primes)
+# print(Primes[3]) #7
+# print(type(Primes)) #list
+# rainbow = ['red', 'orange', 'Yellow', 'Green', 'blue']
+# print(f'кол-во цветов в радуге: {len(rainbow)}')
+# for i in rainbow:
+#     print(i, end = ' ')
+# print()
+#добавления и удаление элементов списка
+# my_list = [] #пустой список
+# count_list = int(input("Введите кол-во элементов"))
+# for i in range(count_list):
+#     print(f"введите элемент  {i} ") #счётчик для пользователя
+#     new_element = int(input("->: ")) #временная переменная
+#     my_list.append(new_element) #добавление нового
+# print(my_list)
+# print(my_list.pop()) #удаление последнего элемента
+#медоты split and join
+#1 2 3
+# user_str = input() #user_str == '1 2 3'
+# user_list = user_str.split() #user_list == ['1', '2', '3']
+# print(string.split('l')) #Heo word!
+# for i in range(len(user_list)):
+#     user_list[i] = int(user_list[i]) #преобразование типа
+# print(''.join(rainbow)) #объединение строк
+# #генератор списков
+# n = 5
+#1 способ
+# list_gen1 = []
+# for i in range(n):
+#     list_gen1.append(i*n)
+#     print(f'первый способ: {list_gen1}')
+# #2 способ
+# list_gen2 = [i*n for i in range(0, n)]
+# print(f'Второй способ: {list_gen2}')
+'''
+задание 1
+напишите программу, вычисляющую произведение элементов
+списка целых. список передаётся в качестве параметра
+полученный результат возвращается на экран.
+'''
+# from random import randint
+# list1 = []*10
+# for i in range(len(list1)):
+#     list1[i] = randint(1,10)
+# print(f"Вывод списка: {list1}")
+'''
+Задание 2
+Напишите программу для нахождения минимума,
+не используя спец. функции, в списке целых,
+список передаётся в качестве параметра.
+полученный результат возвращается на экран.
+аналогично найти максимум.
+аналогично найти сумму.
+аналогично найти произведение всех целых
+'''
+# num = [randint(1,100)]*10
+# for i in range(len(num)):
+#     if num =
+#     print("Минимум", [i])
+
+
+#Задание за 18.09
+#Задание 1
+# num1 = int(input("Введите начало диапазона"))
+# num2 = int(input("Введите конец диапазона"))
+# for i in range(num1, num2):
+#     if i % 7 ==0:
+#         print(i)
+#задание 2
+# num1 = int(input("Введите начало диапазона"))
+# num2 = int(input("Введите конец диапазона"))
+# sum_number = 0
+# number_7 = []
+# for i in range(num1, num2+1):
+#     print(str(i), end = " " )
+#     if i % 5 == 0:
+#         sum_number += 1
+#     elif i % 7 == 0:
+#         number_7.append(i)
+#
+# print("Числа кратные 7", number_7)
+# print("кол-во чисел кратных 5:", sum_number)
+# print()
+#задание 3
+# num1 = int(input("Введите начало диапазона"))
+# num2 = int(input("Введите конец диапазона"))
+# for i in range(num1, num2):
+#     if i % 3 == 0:
+#         print("Fizz")
+#     elif i % 5 == 0:
+#         print("Buzz")
+#     elif i % 3 and i % 5 == 0:
+#         print("Fizz Buzz")
+#     else:
+#         print(i)
