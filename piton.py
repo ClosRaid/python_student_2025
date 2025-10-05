@@ -282,31 +282,35 @@
 # #2 способ
 # list_gen2 = [i*n for i in range(0, n)]
 # print(f'Второй способ: {list_gen2}')
-'''
-задание 1
-напишите программу, вычисляющую произведение элементов
-списка целых. список передаётся в качестве параметра
-полученный результат возвращается на экран.
-'''
-# from random import randint
-# list1 = []*10
-# for i in range(len(list1)):
-#     list1[i] = randint(1,10)
-# print(f"Вывод списка: {list1}")
-'''
-Задание 2
-Напишите программу для нахождения минимума,
-не используя спец. функции, в списке целых,
-список передаётся в качестве параметра.
-полученный результат возвращается на экран.
-аналогично найти максимум.
-аналогично найти сумму.
-аналогично найти произведение всех целых
-'''
-# num = [randint(1,100)]*10
-# for i in range(len(num)):
-#     if num =
-#     print("Минимум", [i])
+
+#задание 1
+#напишите программу, вычисляющую произведение элементов
+#списка целых. список передаётся в качестве параметра
+#полученный результат возвращается на экран.
+
+from random import randint
+# list1 = [randint(1,10),randint(1,10),randint(1,10),randint(1,10)]
+# final = 4
+# list1 = []
+# for i in range(final):
+#     list1.append(i*final)
+# print(f"Вывод списка: {list1,final}")
+
+# Задание 2
+# Напишите программу для нахождения минимума,
+# не используя спец. функции, в списке целых,
+# список передаётся в качестве параметра.
+# полученный результат возвращается на экран
+number = 5
+num = [randint(1,100) for i in range(number)]
+print("список", num)
+for i in range(len(num)):
+    print([i])
+    if len(num) < num[i-1]:
+        num.pop()
+else:
+    print("минимальное число", num[i])
+print("Минимум", num[i])
 
 
 #Задание за 18.09
@@ -343,3 +347,60 @@
 #         print("Fizz Buzz")
 #     else:
 #         print(i)
+
+# list = [10,2,9,3,11,7]
+# for i in range(len(list)):
+#     if list[i] > list[i + 1]:
+#         list[i], list[i + 1]=list[i+1],list[i]
+# print(list)
+import random
+# list_booble = []
+# N = 10
+# for i in range (N):
+#     list_booble.append(random.randint(-10,10))
+# print(f"Начальный список {list_booble}")
+# for i in range(N):
+#     for j in range(N - 1 - i):
+#         if list_booble[j] > list_booble[j+1]:
+#             list_booble[j], list_booble[j+1] = list_booble[j+1], list_booble[j]
+#
+# print(f"Финальный список {list_booble}")
+
+#необходимо составить список состоящий из случайных чисел в диапазоне от -10 до 10
+#где len = 20
+#остортировать список следующим способом
+#1) левая половина сортировка по убыванию
+#2) правая половина сортировка по возрастанию
+# list = []
+# n = 20
+# for i in range (n):
+#     list.append(random.randint(-10, 20))
+# print(list)
+# for i in range(n//2):
+#     for j in range(n//2, n-1):
+#          if list[j] > list[j+1]:
+#              list[j], list[j+1] = list[j+1], list[j]
+#             print(f"От меньшего к большему {list}")
+#         if list[j] < list[j + 1]:
+#             list[j], list[j + 1] = list[j + 1], list[j]
+#         print(f"От большего к меньшему {list}")
+
+#Элементы в диапазоне -20 до 20, где len 45
+#отсортировать список следующим образом
+#1\3 списка только чётные элементы списка
+#2\3 только max и min, которые чередуются
+#3\3 только чётные элементы списка
+# вывести на экран начальый спислк и результат работы на экран
+# list1 = []
+# list2 = []
+# list3 = []
+# n = [0,15]
+# r = [15,30]
+# d = [30,45]
+# for i in range (0,15):
+#     list1.append(random.randint(-20, 20))
+# print(f"Начальный список {list1}")
+# for i in range(len(n)):
+#     if list1[i] % 2 == 0:
+#         list1 = list1.append
+# print(list1)
