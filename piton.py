@@ -282,27 +282,27 @@
 # #2 способ
 # list_gen2 = [i*n for i in range(0, n)]
 # print(f'Второй способ: {list_gen2}')
-'''
-задание 1
-напишите программу, вычисляющую произведение элементов
-списка целых. список передаётся в качестве параметра
-полученный результат возвращается на экран.
-'''
+
+#задание 1
+#напишите программу, вычисляющую произведение элементов
+#списка целых. список передаётся в качестве параметра
+#полученный результат возвращается на экран.
+
 # from random import randint
 # list1 = []*10
 # for i in range(len(list1)):
 #     list1[i] = randint(1,10)
 # print(f"Вывод списка: {list1}")
-'''
-Задание 2
-Напишите программу для нахождения минимума,
-не используя спец. функции, в списке целых,
-список передаётся в качестве параметра.
-полученный результат возвращается на экран.
-аналогично найти максимум.
-аналогично найти сумму.
-аналогично найти произведение всех целых
-'''
+
+# Задание 2
+# Напишите программу для нахождения минимума,
+# не используя спец. функции, в списке целых,
+# список передаётся в качестве параметра.
+# полученный результат возвращается на экран.
+# аналогично найти максимум.
+# аналогично найти сумму.
+# аналогично найти произведение всех целых
+
 # num = [randint(1,100)]*10
 # for i in range(len(num)):
 #     if num =
@@ -343,3 +343,136 @@
 #         print("Fizz Buzz")
 #     else:
 #         print(i)
+
+# list = [10,2,9,3,11,7]
+# for i in range(len(list)):
+#     if list[i] > list[i + 1]:
+#         list[i], list[i + 1]=list[i+1],list[i]
+# print(list)
+import random
+# list_booble = []
+# N = 10
+# for i in range (N):
+#     list_booble.append(random.randint(-10,10))
+# print(f"Начальный список {list_booble}")
+# for i in range(N):
+#     for j in range(N - 1 - i):
+#         if list_booble[j] > list_booble[j+1]:
+#             list_booble[j], list_booble[j+1] = list_booble[j+1], list_booble[j]
+#
+# print(f"Финальный список {list_booble}")
+
+#необходимо составить список состоящий из случайных чисел в диапазоне от -10 до 10
+#где len = 20
+#остортировать список следующим способом
+#1) левая половина сортировка по убыванию
+#2) правая половина сортировка по возрастанию
+# list = []
+# n = 20
+# for i in range (n):
+#     list.append(random.randint(-10, 20))
+# print(list)
+# for i in range(n//2):
+#     for j in range(n//2, n-1):
+#          if list[j] > list[j+1]:
+#              list[j], list[j+1] = list[j+1], list[j]
+#             print(f"От меньшего к большему {list}")
+#         if list[j] < list[j + 1]:
+#             list[j], list[j + 1] = list[j + 1], list[j]
+#         print(f"От большего к меньшему {list}")
+
+#Элементы в диапазоне -20 до 20, шде len 45
+#отсортировать список следующим образом
+#1\3 списка только чётные элементы списка
+#2\3 только max и min, которые чередуются
+#3\3 только чётные элементы списка
+# вывести на экран начальый спислк и результат работы на экран
+# list1 = []
+# list2 = []
+# list3 = []
+# n = [0,15]
+# r = [15,30]
+# d = [30,45]
+# for i in range (n):
+#     list1.append(random.randint(-20, 20))
+# print(f"Начальный список {list}")
+# for i in range(n):
+#         if list[i] % 2 == 0:
+#кортежи tiple - это неизменяемая структура данных, которые по своекму подобию похожа на список.
+# list = [1,2,3]
+# list.append(2)
+# list.pop()
+# del list
+tupleB = (4,5,7)
+tupleA = (1, 2, 3)
+print(type(tupleA))
+print(tupleA)
+# tupleA[1] = 20 #type error
+#Удаление кортежей
+# del tupleB
+# print(tupleB)
+#преобразование типа
+list = [1,2,3,4,5]
+print(type(list), list)
+tupl = tuple(list)
+print(type(tupl), tupl)
+#словари - это неупорядоченная структура данных, позволяющая хранить пары "ключ - значение"
+doctionary = {"персона":"человек",
+              "марафон":"гонка бегунов около 26 миль",
+              "противостоять":"оставаться сильным, не смотря на сложости",
+                "бежать":"двигатьсябыстро"}
+gender_dict = {0: "женский", 1:"мужской"}
+story_count = {"Сто":100, "Девяносто":90, "Десять":10, "Пять":5}
+# dict = {(1,2,3) :"Кортеж можеть быть ключём,",
+#                1: "Целые тоже могут быть ключём",
+#                 "бежать":"строка тоже",
+#                 ['носок',1,2]: "списки не могут",
+#                 1.0 : "Дробый тип не могут"}
+#изменяемые типы данных в качестве ключа выступать не могут(НЕХЕШИРУЮТСЯ)
+int(1) - float(1.0) - True
+#создание словаря
+d = {}
+d = {"dict_key":1, "dictionary":2}
+print(d)
+d = dict(     [(1,1),   (2,1)      ]   )
+d_str = dict( ("ab", "cd") )
+d = dict.fromkeys(['a','b'])
+print(d)
+key_list = ['marvel', 'dc']
+value_list = ['spiderman', 'flash']
+superhero_dict = dict(zip(key_list, value_list))
+print(superhero_dict)
+d = {a : a**2 for a in range(7)}
+print(d)
+#добавление пар
+d['туфля'] = 'обувь'
+#УДАЛЕНИЕ ПАР
+del d['туфля']
+superhero_dict.clear() #очистка словаря
+b = d.copy() #копирование словаря
+print(d.get(1))
+#d.update('ключ':'значение', 'ключНовый': 'значениеНовое')
+#d.values()
+#d.items()
+#d.keys()
+# for keys, value in story_count:
+#     print(key,value)
+for key in story_count.keys():
+    print(key)
+#множества - set
+sets = {0,1,2,3,4}
+fset = frozenset( {2,3,4})
+lists = [1,2,3,4]
+tuple = (7,8,9)
+new_set = sets.union(lists.tuples, fset)
+#set.intersection()
+#set.difference()
+#set.symmetric_difference()
+#set.copy()
+#set.intersection_update
+#set.symmetric_difference_update
+#set.add()
+#set.remove()
+#set.discard()
+#set.pop()
+#set.clear()
