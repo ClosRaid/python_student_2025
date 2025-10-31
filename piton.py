@@ -465,6 +465,70 @@ import random
 # lists = [1,2,3,4]
 # tuple = (7,8,9)
 # new_set = sets.union(lists.tuples, fset)
+
+tupleB = (4,5,7)
+tupleA = (1, 2, 3)
+print(type(tupleA))
+print(tupleA)
+# tupleA[1] = 20 #type error
+#Удаление кортежей
+# del tupleB
+# print(tupleB)
+#преобразование типа
+list = [1,2,3,4,5]
+print(type(list), list)
+tupl = tuple(list)
+print(type(tupl), tupl)
+#словари - это неупорядоченная структура данных, позволяющая хранить пары "ключ - значение"
+doctionary = {"персона":"человек",
+              "марафон":"гонка бегунов около 26 миль",
+              "противостоять":"оставаться сильным, не смотря на сложости",
+                "бежать":"двигатьсябыстро"}
+gender_dict = {0: "женский", 1:"мужской"}
+story_count = {"Сто":100, "Девяносто":90, "Десять":10, "Пять":5}
+# dict = {(1,2,3) :"Кортеж можеть быть ключём,",
+#                1: "Целые тоже могут быть ключём",
+#                 "бежать":"строка тоже",
+#                 ['носок',1,2]: "списки не могут",
+#                 1.0 : "Дробый тип не могут"}
+#изменяемые типы данных в качестве ключа выступать не могут(НЕХЕШИРУЮТСЯ)
+int(1) - float(1.0) - True
+#создание словаря
+d = {}
+d = {"dict_key":1, "dictionary":2}
+print(d)
+d = dict(     [(1,1),   (2,1)      ]   )
+d_str = dict( ("ab", "cd") )
+d = dict.fromkeys(['a','b'])
+print(d)
+key_list = ['marvel', 'dc']
+value_list = ['spiderman', 'flash']
+superhero_dict = dict(zip(key_list, value_list))
+print(superhero_dict)
+d = {a : a**2 for a in range(7)}
+print(d)
+#добавление пар
+d['туфля'] = 'обувь'
+#УДАЛЕНИЕ ПАР
+del d['туфля']
+superhero_dict.clear() #очистка словаря
+b = d.copy() #копирование словаря
+print(d.get(1))
+#d.update('ключ':'значение', 'ключНовый': 'значениеНовое')
+#d.values()
+#d.items()
+#d.keys()
+# for keys, value in story_count:
+#     print(key,value)
+for key in story_count.keys():
+    print(key)
+#множества - set
+sets = {0,1,2,3,4}
+fset = frozenset( {2,3,4})
+lists = [1,2,3,4]
+tuple = (7,8,9)
+new_set = sets.union(lists.tuples, fset)
+
 #set.intersection()
 #set.difference()
 #set.symmetric_difference()
