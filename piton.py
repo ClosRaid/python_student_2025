@@ -466,68 +466,68 @@ import random
 # tuple = (7,8,9)
 # new_set = sets.union(lists.tuples, fset)
 
-tupleB = (4,5,7)
-tupleA = (1, 2, 3)
-print(type(tupleA))
-print(tupleA)
+# tupleB = (4,5,7)
+# tupleA = (1, 2, 3)
+# print(type(tupleA))
+# print(tupleA)
 # tupleA[1] = 20 #type error
 #Удаление кортежей
 # del tupleB
 # print(tupleB)
 #преобразование типа
-list = [1,2,3,4,5]
-print(type(list), list)
-tupl = tuple(list)
-print(type(tupl), tupl)
+# list = [1,2,3,4,5]
+# print(type(list), list)
+# tupl = tuple(list)
+# print(type(tupl), tupl)
 #словари - это неупорядоченная структура данных, позволяющая хранить пары "ключ - значение"
-doctionary = {"персона":"человек",
-              "марафон":"гонка бегунов около 26 миль",
-              "противостоять":"оставаться сильным, не смотря на сложости",
-                "бежать":"двигатьсябыстро"}
-gender_dict = {0: "женский", 1:"мужской"}
-story_count = {"Сто":100, "Девяносто":90, "Десять":10, "Пять":5}
-# dict = {(1,2,3) :"Кортеж можеть быть ключём,",
-#                1: "Целые тоже могут быть ключём",
-#                 "бежать":"строка тоже",
-#                 ['носок',1,2]: "списки не могут",
-#                 1.0 : "Дробый тип не могут"}
-#изменяемые типы данных в качестве ключа выступать не могут(НЕХЕШИРУЮТСЯ)
-int(1) - float(1.0) - True
-#создание словаря
-d = {}
-d = {"dict_key":1, "dictionary":2}
-print(d)
-d = dict(     [(1,1),   (2,1)      ]   )
-d_str = dict( ("ab", "cd") )
-d = dict.fromkeys(['a','b'])
-print(d)
-key_list = ['marvel', 'dc']
-value_list = ['spiderman', 'flash']
-superhero_dict = dict(zip(key_list, value_list))
-print(superhero_dict)
-d = {a : a**2 for a in range(7)}
-print(d)
+# doctionary = {"персона":"человек",
+#               "марафон":"гонка бегунов около 26 миль",
+#               "противостоять":"оставаться сильным, не смотря на сложости",
+#                 "бежать":"двигатьсябыстро"}
+# gender_dict = {0: "женский", 1:"мужской"}
+# story_count = {"Сто":100, "Девяносто":90, "Десять":10, "Пять":5}
+# # dict = {(1,2,3) :"Кортеж можеть быть ключём,",
+# #                1: "Целые тоже могут быть ключём",
+# #                 "бежать":"строка тоже",
+# #                 ['носок',1,2]: "списки не могут",
+# #                 1.0 : "Дробый тип не могут"}
+# #изменяемые типы данных в качестве ключа выступать не могут(НЕХЕШИРУЮТСЯ)
+# int(1) - float(1.0) - True
+# #создание словаря
+# d = {}
+# d = {"dict_key":1, "dictionary":2}
+# print(d)
+# d = dict(     [(1,1),   (2,1)      ]   )
+# d_str = dict( ("ab", "cd") )
+# d = dict.fromkeys(['a','b'])
+# print(d)
+# key_list = ['marvel', 'dc']
+# value_list = ['spiderman', 'flash']
+# superhero_dict = dict(zip(key_list, value_list))
+# print(superhero_dict)
+# d = {a : a**2 for a in range(7)}
+# print(d)
 #добавление пар
-d['туфля'] = 'обувь'
-#УДАЛЕНИЕ ПАР
-del d['туфля']
-superhero_dict.clear() #очистка словаря
-b = d.copy() #копирование словаря
-print(d.get(1))
-#d.update('ключ':'значение', 'ключНовый': 'значениеНовое')
-#d.values()
-#d.items()
-#d.keys()
-# for keys, value in story_count:
-#     print(key,value)
-for key in story_count.keys():
-    print(key)
-#множества - set
-sets = {0,1,2,3,4}
-fset = frozenset( {2,3,4})
-lists = [1,2,3,4]
-tuple = (7,8,9)
-new_set = sets.union(lists.tuples, fset)
+# d['туфля'] = 'обувь'
+# #УДАЛЕНИЕ ПАР
+# del d['туфля']
+# superhero_dict.clear() #очистка словаря
+# b = d.copy() #копирование словаря
+# print(d.get(1))
+# #d.update('ключ':'значение', 'ключНовый': 'значениеНовое')
+# #d.values()
+# #d.items()
+# #d.keys()
+# # for keys, value in story_count:
+# #     print(key,value)
+# for key in story_count.keys():
+#     print(key)
+# #множества - set
+# sets = {0,1,2,3,4}
+# fset = frozenset( {2,3,4})
+# lists = [1,2,3,4]
+# tuple = (7,8,9)
+# new_set = sets.union(lists.tuples, fset)
 
 #set.intersection()
 #set.difference()
@@ -581,15 +581,15 @@ new_set = sets.union(lists.tuples, fset)
 # pancakes.sort(reverse=True)
 # print(pancakes)
 
+
+#30.10 задание до 2.11
 def formativ():
     print("Don't compare your \n"
           "with anyone in this world... \n"
           "if you do so, you are insulting your self \n"
           "\n",
           "\t"* 3, "Bill Gates" )
-
-
-def value(value1,value2):
+def value():
     value1 = int(input("введите число"))
     value2 = int(input("введите второе число"))
     for i in range(value1,value2):
@@ -597,7 +597,17 @@ def value(value1,value2):
             print(f"{i},Чётные числа в радиусе от {value1} до {value2}")
         else:
             print(f"в радиусе от {value1} до {value2} чётных чисел не обнаружено")
-
+def square():
+        square_value = int(input("введите длину стороны квадрата "))
+        symbol = input("введите символ ")
+        znak = int(input("введите переменную логического типа 1: истина 2: ложь "))
+        if znak >= 3:
+            print("incorrect value")
+        for i in range(square_value):
+            print(symbol * i,symbol * i,sep = '', end = '')
+            print(symbol, "\t", symbol)
+            print(symbol * i,symbol * i,sep = '', end = '')
+square()
 '''
 методы для работы с файлом
 file.close()
@@ -681,7 +691,6 @@ def contact_list():
     user_search = input(f"Введите имя из списка контактов:Маша,Даша,Олег ").capitalize()
     for key, value in note_book[user_search].values():
         print(value)
-contact_list()
 # def basnya():
 #     with open("article.txt", 'w+') as question:
 #         question.write("Вечерело \n"
