@@ -288,29 +288,25 @@
 #списка целых. список передаётся в качестве параметра
 #полученный результат возвращается на экран.
 
-from random import randint
-# list1 = [randint(1,10),randint(1,10),randint(1,10),randint(1,10)]
-# final = 4
-# list1 = []
-# for i in range(final):
-#     list1.append(i*final)
-# print(f"Вывод списка: {list1,final}")
+# from random import randint
+# list1 = []*10
+# for i in range(len(list1)):
+#     list1[i] = randint(1,10)
+# print(f"Вывод списка: {list1}")
 
 # Задание 2
 # Напишите программу для нахождения минимума,
 # не используя спец. функции, в списке целых,
 # список передаётся в качестве параметра.
-# полученный результат возвращается на экран
-number = 5
-num = [randint(1,100) for i in range(number)]
-print("список", num)
-for i in range(len(num)):
-    print([i])
-    if len(num) < num[i-1]:
-        num.pop()
-else:
-    print("минимальное число", num[i])
-print("Минимум", num[i])
+# полученный результат возвращается на экран.
+# аналогично найти максимум.
+# аналогично найти сумму.
+# аналогично найти произведение всех целых
+
+# num = [randint(1,100)]*10
+# for i in range(len(num)):
+#     if num =
+#     print("Минимум", [i])
 
 
 #Задание за 18.09
@@ -385,7 +381,7 @@ import random
 #             list[j], list[j + 1] = list[j + 1], list[j]
 #         print(f"От большего к меньшему {list}")
 
-#Элементы в диапазоне -20 до 20, где len 45
+#Элементы в диапазоне -20 до 20, шде len 45
 #отсортировать список следующим образом
 #1\3 списка только чётные элементы списка
 #2\3 только max и min, которые чередуются
@@ -397,10 +393,248 @@ import random
 # n = [0,15]
 # r = [15,30]
 # d = [30,45]
-# for i in range (0,15):
+# for i in range (n):
 #     list1.append(random.randint(-20, 20))
-# print(f"Начальный список {list1}")
-# for i in range(len(n)):
-#     if list1[i] % 2 == 0:
-#         list1 = list1.append
-# print(list1)
+# print(f"Начальный список {list}")
+# for i in range(n):
+#         if list[i] % 2 == 0:
+#кортежи tiple - это неизменяемая структура данных, которые по своекму подобию похожа на список.
+# list = [1,2,3]
+# list.append(2)
+# list.pop()
+# del list
+# tupleB = (4,5,7)
+# tupleA = (1, 2, 3)
+# print(type(tupleA))
+# print(tupleA)
+# # tupleA[1] = 20 #type error
+# #Удаление кортежей
+# # del tupleB
+# # print(tupleB)
+# #преобразование типа
+# list = [1,2,3,4,5]
+# print(type(list), list)
+# tupl = tuple(list)
+# print(type(tupl), tupl)
+# #словари - это неупорядоченная структура данных, позволяющая хранить пары "ключ - значение"
+# doctionary = {"персона":"человек",
+#               "марафон":"гонка бегунов около 26 миль",
+#               "противостоять":"оставаться сильным, не смотря на сложости",
+#                 "бежать":"двигатьсябыстро"}
+# gender_dict = {0: "женский", 1:"мужской"}
+# story_count = {"Сто":100, "Девяносто":90, "Десять":10, "Пять":5}
+# # dict = {(1,2,3) :"Кортеж можеть быть ключём,",
+# #                1: "Целые тоже могут быть ключём",
+# #                 "бежать":"строка тоже",
+# #                 ['носок',1,2]: "списки не могут",
+# #                 1.0 : "Дробый тип не могут"}
+# #изменяемые типы данных в качестве ключа выступать не могут(НЕХЕШИРУЮТСЯ)
+# int(1) - float(1.0) - True
+# #создание словаря
+# d = {}
+# d = {"dict_key":1, "dictionary":2}
+# print(d)
+# d = dict(     [(1,1),   (2,1)      ]   )
+# d_str = dict( ("ab", "cd") )
+# d = dict.fromkeys(['a','b'])
+# print(d)
+# key_list = ['marvel', 'dc']
+# value_list = ['spiderman', 'flash']
+# superhero_dict = dict(zip(key_list, value_list))
+# print(superhero_dict)
+# d = {a : a**2 for a in range(7)}
+# print(d)
+# #добавление пар
+# d['туфля'] = 'обувь'
+# #УДАЛЕНИЕ ПАР
+# del d['туфля']
+# superhero_dict.clear() #очистка словаря
+# b = d.copy() #копирование словаря
+# print(d.get(1))
+# #d.update('ключ':'значение', 'ключНовый': 'значениеНовое')
+# #d.values()
+# #d.items()
+# #d.keys()
+# # for keys, value in story_count:
+# #     print(key,value)
+# for key in story_count.keys():
+#     print(key)
+# #множества - set
+# sets = {0,1,2,3,4}
+# fset = frozenset( {2,3,4})
+# lists = [1,2,3,4]
+# tuple = (7,8,9)
+# new_set = sets.union(lists.tuples, fset)
+#set.intersection()
+#set.difference()
+#set.symmetric_difference()
+#set.copy()
+#set.intersection_update
+#set.symmetric_difference_update
+#set.add()
+#set.remove()
+#set.discard()
+#set.pop()
+#set.clear()
+
+
+#есть стопка оладий различного радиуса, единственная операция с ними - между двумя оладиями просунуть лопатку и
+#поменять порядок оладий над лопаткой на обратный
+#необходимо за минимальное кол-во операций таких остортировать снизу вверх по убыванию радиуса
+#1. Найти блин с большим радиусом
+#2. Перевернуть стопку так, что бы блин с набиольшим радиусом оказался наверху
+#3. перевернуть всю стопку, что бы набольший блин оказалася снизу
+#4. повтрить сие действие до тех пор пока стопка не будет отсортирована
+# pancakes = [3,1,4,5,9,6,4,3,6,2,4,7]
+# pancakes2 = []
+# n = len(pancakes)
+# i = 0
+# def sort_blin(pancakes):
+#     def find_index_big(pancakes,n):
+#         i = 0
+#         for j in range(len(pancakes)):
+#             if pancakes[j] > pancakes[i]:
+#                 i = j
+#     pancakes2 = pancakes[:i] [::-1] + pancakes[:1]
+#     def flip(pancakes,k):
+#         return pancakes[:k][::-1] + pancakes[:k]
+#     result = []
+#     while n > 1:
+#         i = find_index_big(pancakes,n)
+#         if i < n-1:
+#             pancakes = flip(pancakes, i+1) #перевернуть стопку ещё раз
+#             result.append(i+1) #лбавить кол-во шагов(операций)
+#             pancakes = flip(pancakes,n) #перевернуть стопку
+#             result.append(n) #добавить шаги в список
+#         n -= 1 #уменьшаем итерации в стопке
+#     return result
+# pancakes = [3,1,4,5,9,6,4,3,6,2,4,7]
+# oper = sort_blin()
+# print(f"блины: {pancakes}")
+# print(f"Операции:{oper}")
+# pancakes.sort()
+# print(pancakes)
+# pancakes.sort(reverse=True)
+# print(pancakes)
+
+def formativ():
+    print("Don't compare your \n"
+          "with anyone in this world... \n"
+          "if you do so, you are insulting your self \n"
+          "\n",
+          "\t"* 3, "Bill Gates" )
+
+
+def value(value1,value2):
+    value1 = int(input("введите число"))
+    value2 = int(input("введите второе число"))
+    for i in range(value1,value2):
+        if i % 2 == 0:
+            print(f"{i},Чётные числа в радиусе от {value1} до {value2}")
+        else:
+            print(f"в радиусе от {value1} до {value2} чётных чисел не обнаружено")
+
+'''
+методы для работы с файлом
+file.close()
+file.fileno()
+file.flush() - метод очистки буфера
+file.isatty() - проверка на открытие файла в терминале()прямо сейчас)
+file.next() - возвращает след. строку файла
+file.read()
+file.readline() - чтение строки файла
+file.readlines() - чтение всех строк файла
+file.seek()
+file.seekable() - роверка доступа файла
+file.tell() - текущая позиция в строке файла
+file.truncate() - уменьшает размер файла на n байт
+file.write()
+file.writelines(line) - обавление строк в файл
+'''
+#30.10
+import re
+def isCyrillic(text):
+    return bool(re.search('[а-яА-Я]', text))
+def scrabl():
+    point_en = {1:'AEIOULNSTR',
+                    2:'DG',
+                    3:'BCMP',
+                    4:'FHVWY',
+                    5:'K',
+                    8:'JX',
+                    10:'QZ'}
+    point_ru = {1:'АВЕИНОСТ',
+                2:'ДКЛМПУ',
+                3:'БГЁЬЯ',
+                4:'ЙЫ',
+                5:'ЖЗЧЦЧ',
+                8:'ШЭЮ',
+                10:'ФЩЪ'}
+    while True:
+        text_user = input("Для отмены напишите 0. Игрок 1 Введите слово:").upper()
+        if text_user == "0":
+            print("Прощайте")
+            break
+        text_user2 = input("Для отмены напишите 0. Игрок 2 Введите слово:").upper()
+        if text_user2 == "0":
+            print("Прощайте")
+            break
+        player1 = 0
+        player2 = 0
+        if isCyrillic(text_user):
+                print('Кол-во очков:',sum([key for i in text_user for key, value in point_ru.items() if i in value]))
+                player1 = player1 + sum([key for i in text_user for key, value in point_ru.items() if i in value])
+                player2 = player2 + sum([key for i in text_user2 for key, value in point_ru.items() if i in value])
+        else:
+                print('Кол-во очков:',sum([key for i in text_user for key, value in point_en.items() if i in value]))
+                player1 = player1 + sum([key for i in text_user for key, value in point_en.items() if i in value])
+                player2 = player2 + sum([key for i in text_user2 for key, value in point_en.items() if i in value])
+        print(f"кол-во очков первого игрока {player1}, кол-во очков второго игрока {player2} ")
+def camping():
+    backpack = {'Зажигалка': 20, 'Компас': 100, 'Фрукты': 500, 'Рубашка': 300,
+                'Термос': 1000, 'аптечка': 200, 'Куртка': 600, 'Бинокль': 400,
+                'Удочка': 1300, 'Салфетки': 40, 'Бутерброды': 800, 'Палатка': 5500,
+                'Спальный мешок': 2500, 'Изолента': 250, 'Котел': 3000
+                }
+    human1_massa = int(input("Введите допустимый вес рюкзака первого человека: ")) * 1000
+    human2_massa = int(input("Введите допустимый вес рюкзака первого человека: ")) * 1000
+    print("Могу взять: ")
+    for key, value in backpack.items():
+        if value < human1_massa or value < human2_massa:
+            print(key, value, end=' ')
+            print()
+            print("Не Могу взять: ")
+    for key, value in backpack.items():
+        if value > human1_massa or value > human2_massa:
+            print(key, value, end=' ')
+def contact_list():
+    note_book = {"Маша":
+                     {'tel': '+7922123561', 'vk': 'vk.com/masha321', 'youtube': 'youtube.com/masha321', 'telegram'
+                     : 't.me/masha321'},
+                 "Даша":{'tel': '+79023321293', 'vk': 'vk.com/dashulya1910', 'telegram': '@Egoistik_manyak'},
+                 "Олег":{'tel': '+79522301092', 'vk': 'vk.com/CODStyle', 'youtube': 'youtube.com/CodeSky',
+                         'telegram':'@CODProf'}}
+    user_search = input(f"Введите имя из списка контактов:Маша,Даша,Олег ").capitalize()
+    for key, value in note_book[user_search].values():
+        print(value)
+contact_list()
+# def basnya():
+#     with open("article.txt", 'w+') as question:
+#         question.write("Вечерело \n"
+#                    "Жужжали мухи \n"
+#                    "Кипела вода в чайнике \n"
+#                    "Венера зажглась на небе \n"
+#                    "Деревья шумели \n"
+#                    "Тучи разошлись \n"
+#                    "Листва Зеленела \n")
+#     with open ("article.txt", 'r') as file:
+#         for i in file.readlines():
+#             print(i, end='')
+# #задание 2
+# def rewrite():
+#     with open("articleWords.txt", 'w+') as words:
+#                 for j in readlines():
+#                     if j >= readlines[8]:
+#                         words.write(j)
+#     with open("articleWords", 'r') as read:
+#                 read.readlines()
