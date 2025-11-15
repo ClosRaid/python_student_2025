@@ -960,3 +960,54 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#лабораторная работа по файлам
+import math
+import numpy as np
+
+
+def y1(x):
+    """y1(x) = 20 + (1 + x) * ∛(1 + x²)"""
+    return 20 + (1 + x) * np.cbrt(1 + x ** 2)
+
+
+def y2(x):
+    """y2(x) = -x + 2e^(-2x)"""
+    return -x + 2 * math.exp(-2 * x)
+
+
+# Параметры
+n0 = -5  # начальное значение x
+nk = 5  # конечное значение x
+h = 0.5  # шаг
+
+# Генерация массивов
+x_values = np.arange(n0, nk + h, h)
+y1_values = []
+y2_values = []
+
+# Вычисление значений функций
+for x in x_values:
+    y1_values.append(y1(x))
+    y2_values.append(y2(x))
+
+# Запись в файл
+with open('data.txt', 'w') as file:
+    file.write("Результаты вычислений функций y1 и y2\n")
+    file.write(f"Диапазон x: от {n0} до {nk} с шагом {h}\n")
+    file.write("№\t x\t\t y1(x)\t\t y2(x)\n")
+
+    for i, (x, y1_val, y2_val) in enumerate(zip(x_values, y1_values, y2_values), 1):
+        file.write(f"{i}\t {x:.2f}\t {y1_val:.4f}\t {y2_val:.4f}\n")
+
+    file.write(f"Формулы:\n")
+    file.write(f"y1(x) = 20 + (1 + x) * ∛(1 + x²)\n")
+    file.write(f"y2(x) = -x + 2e^(-2x)\n")
+
+print("Результаты успешно записаны в файл 'data.txt'")
+
+# Дополнительно выводим первые несколько значений для проверки
+print("\nПервые 5 значений для проверки:")
+print("x\t y1(x)\t\t y2(x)")
+for i in range(min(5, len(x_values))):
+    print(f"{x_values[i]:.2f}\t {y1_values[i]:.4f}\t {y2_values[i]:.4f}")
