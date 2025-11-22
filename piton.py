@@ -726,288 +726,455 @@ file.writelines(line) - обавление строк в файл
     ab+ = аналог выше стоящего с созданием файла
 '''
 #задание 1
-def basnya():
-    with open("article.txt", 'w+') as question:
-        question.write("Вечерело \n"
-                   "Жужжали мухи \n"
-                   "Кипела вода в чайнике \n"
-                   "Венера зажглась на небе \n"
-                   "Деревья шумели \n"
-                   "Тучи разошлись \n"
-                   "Листва Зеленела \n")
-    with open ("article.txt", 'r') as file:
-        for i in file.readlines():
-            print(i, end='')
+# def basnya():
+#     with open("article.txt", 'w+') as question:
+#         question.write("Вечерело \n"
+#                    "Жужжали мухи \n"
+#                    "Кипела вода в чайнике \n"
+#                    "Венера зажглась на небе \n"
+#                    "Деревья шумели \n"
+#                    "Тучи разошлись \n"
+#                    "Листва Зеленела \n")
+#     with open ("article.txt", 'r') as file:
+#         for i in file.readlines():
+#             print(i, end='')
+#
+#
+# def task2():
+#     """Задание 2: Создать файл со словами из 7+ букв из басни"""
+#     try:
+#         with open('vorona_i_lisitsa.txt', 'r') as file:
+#             content = file.read()
+#
+#         words = content.split()
+#         long_words = [word for word in words if len(word.strip('.,!?;:"')) >= 7]
+#
+#         with open('long_words.txt', 'w') as output_file:
+#             for word in long_words:
+#                 output_file.write(word + '\n')
+#
+#         print(f"Задание 2 выполнено! Найдено {len(long_words)} слов из 7+ букв.")
+#         print("Результат записан в файл 'long_words.txt'")
+#
+#     except FileNotFoundError:
+#         print("Ошибка: Файл 'vorona_i_lisitsa.txt' не найден!")
+#         print("Создайте файл с басней или измените имя файла.")
+#
+# def task3():
+#     try:
+#         with open('file1.txt', 'r') as file1:
+#             lines = file1.readlines()
+#
+#         with open('file2.txt', 'w') as file2:
+#             for line in lines:
+#                 file2.write(line)
+#
+#         print("файлы переписаны, хорошего дня!")
+#
+#     except FileNotFoundError:
+#         print("Ошибка: Файл 'file1.txt' не найден!")
+#
+#
+# def task4():
+#     try:
+#         with open('file1.txt', 'r', encoding='utf-8') as file1:
+#             lines = file1.readlines()
+#
+#         with open('file2_reversed.txt', 'w', encoding='utf-8') as file2:
+#             for line in reversed(lines):
+#                 file2.write(line)
+#
+#         print("Задание 4 выполнено! Строки переписаны в обратном порядке в 'file2_reversed.txt'")
+#
+#     except FileNotFoundError:
+#         print("Ошибка: Файл 'file1.txt' не найден!")
+#
+#
+# def task5():
+#     try:
+#         with open('text_file.txt', 'r') as file:
+#             lines = file.readlines()
+#
+#         last_no_comma_index = -1
+#         for i, line in enumerate(lines):
+#             if ',' not in line:
+#                 last_no_comma_index = i
+#
+#         if last_no_comma_index != -1:
+#             lines.insert(last_no_comma_index + 1, '*' * 12 + '\n')
+#         else:
+#             lines.append('*' * 12 + '\n')
+#
+#         with open('text_file.txt', 'w') as file:
+#             file.writelines(lines)
+#
+#         print("Задача выполнена!")
+#
+#     except FileNotFoundError:
+#         print("Ошибка: Файл 'text_file.txt' не найден!")
+#
+#
+# def task6():
+#     try:
+#         char = input("Введите символ для поиска: ").strip()
+#         if len(char) != 1:
+#             print("Ошибка: нужно ввести один символ!")
+#             return
+#
+#         with open('text_file.txt', 'r') as file:
+#             content = file.read()
+#
+#         words = content.split()
+#         count = 0
+#         matching_words = []
+#
+#         for word in words:
+#             clean_word = word.strip('.,!?;:"').lower()
+#             if clean_word and clean_word[0] == char.lower():
+#                 count += 1
+#                 matching_words.append(word)
+#
+#         print(f"Найдено {count} слов, начинающихся с символа '{char}':")
+#         for word in matching_words[:10]:  # Показываем первые 10 слов
+#             print(f"  {word}")
+#         if len(matching_words) > 10:
+#             print(f"  ... и еще {len(matching_words) - 10} слов")
+#
+#     except FileNotFoundError:
+#         print("Ошибка: Файл 'text_file.txt' не найден!")
+#
+#
+# def task7():
+#     try:
+#         with open('file_with_stars.txt', 'r', encoding='utf-8') as file1:
+#             lines = file1.readlines()
+#
+#         modified_lines = [line.replace('*', '&') for line in lines]
+#
+#         with open('file_with_ampersands.txt', 'w', encoding='utf-8') as file2:
+#             file2.writelines(modified_lines)
+#
+#         print("Задача выполнена! Символы * заменены на & в новом файле.")
+#
+#     except FileNotFoundError:
+#         print("Ошибка: Файл 'file_with_stars.txt' не найден!")
+#
+#
+# def task8():
+#     strings = [
+#         "Первая строка",
+#         "Вторая строка",
+#         "Третья строка",
+#         "Четвертая строка",
+#         "Пятая строка"
+#     ]
+#
+#     print("Массив для записи:")
+#     for i, string in enumerate(strings, 1):
+#         print(f"{i}. {string}")
+#
+#     with open('array_output.txt', 'w') as file:
+#         for string in strings:
+#             file.write(string + '\n')
+#
+#     print("Задача выполнена! Массив записан в файл 'array_output.txt'")
+#
+#
+# def task9():
+#     try:
+#         filename = input("Введите имя файла (по умолчанию 'text_file.txt'): ").strip()
+#         if not filename:
+#             filename = 'text_file.txt'
+#
+#         with open(filename, 'r') as file:
+#             content = file.read()
+#
+#         char_count = len(content)
+#         print(f"Файл '{filename}' содержит {char_count} символов.")
+#
+#     except FileNotFoundError:
+#         print(f"Ошибка: Файл '{filename}' не найден!")
+#
+#
+# def task10():
+#     try:
+#         filename = input("Введите имя файла (по умолчанию 'text_file.txt'): ").strip()
+#         if not filename:
+#             filename = 'text_file.txt'
+#
+#         with open(filename, 'r', encoding='utf-8') as file:
+#             lines = file.readlines()
+#
+#         line_count = len(lines)
+#         print(f"Файл '{filename}' содержит {line_count} строк.")
+#
+#     except FileNotFoundError:
+#         print(f"Ошибка: Файл '{filename}' не найден!")
+#
+# def main():
+#     while True:
+#         print("\n" + "=" * 50)
+#         print("Меню: \n"
+#                     "1. Создать примеры файлов для демонстрации \n"
+#                     "2. Задание 2 - Слова из 7+ букв из басни \n"
+#                     "3. Задание 3 - Переписать строки с сохранением порядка \n"
+#                     "4. Задание 4 - Переписать строки в обратном порядке \n"
+#                     "5. Задание 5 - Добавить строку из звездочек \n"
+#                     "6. Задание 6 - Подсчитать слова по первой букве \n"
+#                     "7. Задание 7 - Заменить * на & \n"
+#                     "8. Задание 8 - Записать массив в файл \n"
+#                     "9. Задание 9 - Подсчитать символы в файле \n"
+#                     "10. Задание 10 - Подсчитать строки в файле \n"
+#                     "0. Выход")
+#
+#         choice = input("Выберите задание (0-10): ").strip()
+#
+#         if choice == '0':
+#             print("Выход из программы.")
+#             break
+#         elif choice == '1':
+#             basnya()
+#         elif choice == '2':
+#             task2()
+#         elif choice == '3':
+#             task3()
+#         elif choice == '4':
+#             task4()
+#         elif choice == '5':
+#             task5()
+#         elif choice == '6':
+#             task6()
+#         elif choice == '7':
+#             task7()
+#         elif choice == '8':
+#             task8()
+#         elif choice == '9':
+#             task9()
+#         elif choice == '10':
+#             task10()
+#         else:
+#             print("Неверный выбор! Попробуйте снова.")
+#
+#         input("\nНажмите Enter для продолжения...")
+#
+#
+# if __name__ == "__main__":
+#     main()
+#
+# #лабораторная работа по файлам
+# import math
+# import numpy as np
+#
+#
+# def y1(x):
+#     """y1(x) = 20 + (1 + x) * ∛(1 + x²)"""
+#     return 20 + (1 + x) * np.cbrt(1 + x ** 2)
+#
+#
+# def y2(x):
+#     """y2(x) = -x + 2e^(-2x)"""
+#     return -x + 2 * math.exp(-2 * x)
+#
+#
+# # Параметры
+# n0 = -5  # начальное значение x
+# nk = 5  # конечное значение x
+# h = 0.5  # шаг
+#
+# # Генерация массивов
+# x_values = np.arange(n0, nk + h, h)
+# y1_values = []
+# y2_values = []
+#
+# # Вычисление значений функций
+# for x in x_values:
+#     y1_values.append(y1(x))
+#     y2_values.append(y2(x))
+#
+# # Запись в файл
+# with open('data.txt', 'w') as file:
+#     file.write("Результаты вычислений функций y1 и y2\n")
+#     file.write(f"Диапазон x: от {n0} до {nk} с шагом {h}\n")
+#     file.write("№\t x\t\t y1(x)\t\t y2(x)\n")
+#
+#     for i, (x, y1_val, y2_val) in enumerate(zip(x_values, y1_values, y2_values), 1):
+#         file.write(f"{i}\t {x:.2f}\t {y1_val:.4f}\t {y2_val:.4f}\n")
+#
+#     file.write(f"Формулы:\n")
+#     file.write(f"y1(x) = 20 + (1 + x) * ∛(1 + x²)\n")
+#     file.write(f"y2(x) = -x + 2e^(-2x)\n")
+#
+# print("Результаты успешно записаны в файл 'data.txt'")
+#
+# # Дополнительно выводим первые несколько значений для проверки
+# print("\nПервые 5 значений для проверки:")
+# print("x\t y1(x)\t\t y2(x)")
+# for i in range(min(5, len(x_values))):
+#     print(f"{x_values[i]:.2f}\t {y1_values[i]:.4f}\t {y2_values[i]:.4f}")
 
+#задание до 22.11
+#задание 1
+def numbers():
+    number_1 = [random.randint(1, 100) for i in range(5)]
+    number_2 = [random.randint(1, 100) for i in range(5)]
+    number_3 = [random.randint(1, 100) for i in range(5)]
+    number = number_1 + number_2 + number_3
+    print(number)
+    mid = sum(number) // len(number)
+    if mid > 0:
+        number_1.sort()
+        number_2.sort()
+        number_3.sort(reverse=True)
+        number = number_1 + number_2 + number_3
+        print(number)
+    if mid < 0:
+        number_1.sort()
+        number_2.sort(reverse=True)
+        number_3.sort(reverse=True)
+        number = number_1 + number_2 + number_3
+        print(number)
+#задание 2
+class Rating:
+        def print_rating(self):
+            one = int(input("первая оценка"))
+            two = int(input("вторая оценка"))
+            three = int(input("третья оценка"))
+            four = int(input("четвёртая оценка"))
+            five = int(input("пятая оценка"))
+            six = int(input("шестая оценка"))
+            seven = int(input("седьмая оценка"))
+            eight = int(input("восьмая оценка"))
+            nine = int(input("девятая оценка"))
+            ten = int(input("десятая оценка"))
+            if one or two or three or five or six or seven or eight or nine or ten > 12:
+                if one or two or three or five or six or seven or eight or nine or ten < 1:
+                    print("Некорректное значение оценки, введите новое")
+                    return
+            print(one,two,three,four,five,six,seven,eight,nine,ten)
+            return one,two,three,four,five,six,seven,eight,nine,ten
+        def rewrite(self):
+            while True:
+                choice = int(input("какую оценку вы хотите пересдать? от 1 до 10, 0 для выхода"))
+                if choice == 1:
+                    self.one = int(input("введите новую оценку"))
+                elif choice == 2:
+                    self.two = int(input("введите новую оценку"))
+                elif choice == 3:
+                    self.three = int(input("введите новую оценку"))
+                elif choice == 4:
+                    self.four = int(input("введите новую оценку"))
+                elif choice == 5:
+                    self.five = int(input("введите новую оценку"))
+                elif choice == 6:
+                    self.six = int(input("введите новую оценку"))
+                elif choice == 7:
+                    self.seven = int(input("введите новую оценку"))
+                elif choice == 8:
+                    self.eight = int(input("введите новую оценку"))
+                elif choice == 9:
+                    self.nine = int(input("введите новую оценку"))
+                elif choice == 10:
+                    self.ten = int(input("введите новую оценку"))
+                elif choice == 0:
+                    print("прощайте")
+                    break
+                else:
+                    print("Неверное значение, такой оценки не существует")
+                    return
+        def scholarship(self):
+            print("Идёт подсчёт оценок для ответа выйдет ли стипендия...")
+            payment = (self.one + self.two + self.three + self.four + self.five + self.six + self.seven +
+                       self.eight + self.nine + self.ten)
+            payment = payment / 10
+            if payment >= 10.7:
+                print("Стипендия выходит, поздравляем!")
+            else:
+                print("Стипендия не выходит, нам очень жаль")
+        def sortirovka(self):
+            choice_user = int(input("Отсортировать список по возрастанию или убыванию? 1 - по возрастанию"
+                                    "2 - по убыванию"))
+            if choice_user == 1:
+                print("Начало сортировки списка оценок по возрастанию")
+                list_rating = [self.one, self.two,self.three,self.four,self.five,self.six,
+                               self.seven,self.eight,self.nine,self.ten]
+                list_rating.sort()
+            elif choice_user == 2:
+                print("Начало сортировки списка оценок по убыванию")
+                list_rating = [self.one, self.two, self.three, self.four, self.five, self.six,
+                               self.seven, self.eight, self.nine, self.ten]
+                list_rating.sort(reverse=True)
+def main():
+    while True:
+        rating = Rating
+        rating.print_rating()
+        user_choice = int(input("что вам потребуется? 1 - перезапись оценок, 2 - подсчёт выйдет ли стипендия"
+                                "3 - сортировка по возрастанию или убыванию, 0 для завершения"))
+        if user_choice == 1:
+            rating.rewrite()
+        elif user_choice == 2:
+            rating.scholarship()
+        elif user_choice == 3:
+            rating.sortirovka()
+        elif user_choice == 0:
+            print("Прощайте")
+            break
+# main()
 
-def task2():
-    """Задание 2: Создать файл со словами из 7+ букв из басни"""
-    try:
-        with open('vorona_i_lisitsa.txt', 'r') as file:
-            content = file.read()
+#Задание 3
+def improved_bubble_sort(arr):
+    n = len(arr)
 
-        words = content.split()
-        long_words = [word for word in words if len(word.strip('.,!?;:"')) >= 7]
+    for i in range(n - 1):
+        swaps = 0  # счетчик перестановок на текущем шаге
 
-        with open('long_words.txt', 'w') as output_file:
-            for word in long_words:
-                output_file.write(word + '\n')
+        for j in range(n - 1 - i):
+            if arr[j] > arr[j + 1]:
+                # Обмен элементов
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swaps += 1
 
-        print(f"Задание 2 выполнено! Найдено {len(long_words)} слов из 7+ букв.")
-        print("Результат записан в файл 'long_words.txt'")
-
-    except FileNotFoundError:
-        print("Ошибка: Файл 'vorona_i_lisitsa.txt' не найден!")
-        print("Создайте файл с басней или измените имя файла.")
-
-def task3():
-    try:
-        with open('file1.txt', 'r') as file1:
-            lines = file1.readlines()
-
-        with open('file2.txt', 'w') as file2:
-            for line in lines:
-                file2.write(line)
-
-        print("файлы переписаны, хорошего дня!")
-
-    except FileNotFoundError:
-        print("Ошибка: Файл 'file1.txt' не найден!")
-
-
-def task4():
-    try:
-        with open('file1.txt', 'r', encoding='utf-8') as file1:
-            lines = file1.readlines()
-
-        with open('file2_reversed.txt', 'w', encoding='utf-8') as file2:
-            for line in reversed(lines):
-                file2.write(line)
-
-        print("Задание 4 выполнено! Строки переписаны в обратном порядке в 'file2_reversed.txt'")
-
-    except FileNotFoundError:
-        print("Ошибка: Файл 'file1.txt' не найден!")
-
-
-def task5():
-    try:
-        with open('text_file.txt', 'r') as file:
-            lines = file.readlines()
-
-        last_no_comma_index = -1
-        for i, line in enumerate(lines):
-            if ',' not in line:
-                last_no_comma_index = i
-
-        if last_no_comma_index != -1:
-            lines.insert(last_no_comma_index + 1, '*' * 12 + '\n')
+        # Если перестановок не было, список отсортирован
+        if swaps == 0:
+            print(f"Сортировка завершена на шаге {i + 1}")
+            break
         else:
-            lines.append('*' * 12 + '\n')
+            print(f"Шаг {i + 1}: выполнено {swaps} перестановок")
 
-        with open('text_file.txt', 'w') as file:
-            file.writelines(lines)
+    return arr
 
-        print("Задача выполнена!")
-
-    except FileNotFoundError:
-        print("Ошибка: Файл 'text_file.txt' не найден!")
-
-
-def task6():
-    try:
-        char = input("Введите символ для поиска: ").strip()
-        if len(char) != 1:
-            print("Ошибка: нужно ввести один символ!")
-            return
-
-        with open('text_file.txt', 'r') as file:
-            content = file.read()
-
-        words = content.split()
-        count = 0
-        matching_words = []
-
-        for word in words:
-            clean_word = word.strip('.,!?;:"').lower()
-            if clean_word and clean_word[0] == char.lower():
-                count += 1
-                matching_words.append(word)
-
-        print(f"Найдено {count} слов, начинающихся с символа '{char}':")
-        for word in matching_words[:10]:  # Показываем первые 10 слов
-            print(f"  {word}")
-        if len(matching_words) > 10:
-            print(f"  ... и еще {len(matching_words) - 10} слов")
-
-    except FileNotFoundError:
-        print("Ошибка: Файл 'text_file.txt' не найден!")
-
-
-def task7():
-    try:
-        with open('file_with_stars.txt', 'r', encoding='utf-8') as file1:
-            lines = file1.readlines()
-
-        modified_lines = [line.replace('*', '&') for line in lines]
-
-        with open('file_with_ampersands.txt', 'w', encoding='utf-8') as file2:
-            file2.writelines(modified_lines)
-
-        print("Задача выполнена! Символы * заменены на & в новом файле.")
-
-    except FileNotFoundError:
-        print("Ошибка: Файл 'file_with_stars.txt' не найден!")
-
-
-def task8():
-    strings = [
-        "Первая строка",
-        "Вторая строка",
-        "Третья строка",
-        "Четвертая строка",
-        "Пятая строка"
-    ]
-
-    print("Массив для записи:")
-    for i, string in enumerate(strings, 1):
-        print(f"{i}. {string}")
-
-    with open('array_output.txt', 'w') as file:
-        for string in strings:
-            file.write(string + '\n')
-
-    print("Задача выполнена! Массив записан в файл 'array_output.txt'")
-
-
-def task9():
-    try:
-        filename = input("Введите имя файла (по умолчанию 'text_file.txt'): ").strip()
-        if not filename:
-            filename = 'text_file.txt'
-
-        with open(filename, 'r') as file:
-            content = file.read()
-
-        char_count = len(content)
-        print(f"Файл '{filename}' содержит {char_count} символов.")
-
-    except FileNotFoundError:
-        print(f"Ошибка: Файл '{filename}' не найден!")
-
-
-def task10():
-    try:
-        filename = input("Введите имя файла (по умолчанию 'text_file.txt'): ").strip()
-        if not filename:
-            filename = 'text_file.txt'
-
-        with open(filename, 'r', encoding='utf-8') as file:
-            lines = file.readlines()
-
-        line_count = len(lines)
-        print(f"Файл '{filename}' содержит {line_count} строк.")
-
-    except FileNotFoundError:
-        print(f"Ошибка: Файл '{filename}' не найден!")
 
 def main():
     while True:
-        print("\n" + "=" * 50)
-        print("Меню: \n"
-                    "1. Создать примеры файлов для демонстрации \n"
-                    "2. Задание 2 - Слова из 7+ букв из басни \n"
-                    "3. Задание 3 - Переписать строки с сохранением порядка \n"
-                    "4. Задание 4 - Переписать строки в обратном порядке \n"
-                    "5. Задание 5 - Добавить строку из звездочек \n"
-                    "6. Задание 6 - Подсчитать слова по первой букве \n"
-                    "7. Задание 7 - Заменить * на & \n"
-                    "8. Задание 8 - Записать массив в файл \n"
-                    "9. Задание 9 - Подсчитать символы в файле \n"
-                    "10. Задание 10 - Подсчитать строки в файле \n"
-                    "0. Выход")
+        print("Меню:")
+        print("1. Ввести список для сортировки \n"
+                "2. Выход")
 
-        choice = input("Выберите задание (0-10): ").strip()
+        choice = int(input("Выберите действие 1-2: "))
 
-        if choice == '0':
-            print("Выход из программы.")
+        if choice == 1:
+            try:
+                input_str = input("Введите элементы списка через пробел: ")
+                arr = list(map(int, input_str.split()))
+
+                if not arr:
+                    print("Список не может быть пустым!")
+                    continue
+
+                print(f"\nИсходный список: {arr}")
+                sorted_arr = improved_bubble_sort(arr.copy())
+                print(f"Отсортированный список: {sorted_arr}")
+
+            except ValueError:
+                print("Ошибка! Введите целые числа через пробел.")
+
+
+        elif choice == 2:
+            print("Выход из программы...")
             break
-        elif choice == '1':
-            basnya()
-        elif choice == '2':
-            task2()
-        elif choice == '3':
-            task3()
-        elif choice == '4':
-            task4()
-        elif choice == '5':
-            task5()
-        elif choice == '6':
-            task6()
-        elif choice == '7':
-            task7()
-        elif choice == '8':
-            task8()
-        elif choice == '9':
-            task9()
-        elif choice == '10':
-            task10()
+
         else:
             print("Неверный выбор! Попробуйте снова.")
-
-        input("\nНажмите Enter для продолжения...")
 
 
 if __name__ == "__main__":
     main()
-
-#лабораторная работа по файлам
-import math
-import numpy as np
-
-
-def y1(x):
-    """y1(x) = 20 + (1 + x) * ∛(1 + x²)"""
-    return 20 + (1 + x) * np.cbrt(1 + x ** 2)
-
-
-def y2(x):
-    """y2(x) = -x + 2e^(-2x)"""
-    return -x + 2 * math.exp(-2 * x)
-
-
-# Параметры
-n0 = -5  # начальное значение x
-nk = 5  # конечное значение x
-h = 0.5  # шаг
-
-# Генерация массивов
-x_values = np.arange(n0, nk + h, h)
-y1_values = []
-y2_values = []
-
-# Вычисление значений функций
-for x in x_values:
-    y1_values.append(y1(x))
-    y2_values.append(y2(x))
-
-# Запись в файл
-with open('data.txt', 'w') as file:
-    file.write("Результаты вычислений функций y1 и y2\n")
-    file.write(f"Диапазон x: от {n0} до {nk} с шагом {h}\n")
-    file.write("№\t x\t\t y1(x)\t\t y2(x)\n")
-
-    for i, (x, y1_val, y2_val) in enumerate(zip(x_values, y1_values, y2_values), 1):
-        file.write(f"{i}\t {x:.2f}\t {y1_val:.4f}\t {y2_val:.4f}\n")
-
-    file.write(f"Формулы:\n")
-    file.write(f"y1(x) = 20 + (1 + x) * ∛(1 + x²)\n")
-    file.write(f"y2(x) = -x + 2e^(-2x)\n")
-
-print("Результаты успешно записаны в файл 'data.txt'")
-
-# Дополнительно выводим первые несколько значений для проверки
-print("\nПервые 5 значений для проверки:")
-print("x\t y1(x)\t\t y2(x)")
-for i in range(min(5, len(x_values))):
-    print(f"{x_values[i]:.2f}\t {y1_values[i]:.4f}\t {y2_values[i]:.4f}")
