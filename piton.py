@@ -1176,5 +1176,53 @@ def main():
             print("Неверный выбор! Попробуйте снова.")
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
+
+#задание до 23.11
+#задание 1
+def spravochnik():
+    while True:
+        id_code = [78,77,75,34,112]
+        phone_number = [+79923021324, +79969121845, +79083914030, +79516719802]
+        sortirovka = int(input("Вы хотите отсортировать по идентификационным номерам или номерам телефонов"
+                               "или вывести весь список? 1-3, 0 - выход "))
+        if sortirovka == 1:
+            print(f"{id_code} сортируется...")
+            id_code.sort()
+            print(f"{id_code} отсортировано!")
+        elif sortirovka == 2:
+            print(f"{phone_number} сортируется...")
+            phone_number.sort()
+            print(f"{phone_number} отсортировано!")
+        elif sortirovka == 3:
+            print(f"Идентификационные номера: {id_code}\n "
+                  f"Номера телефонов: {phone_number}")
+        elif sortirovka == 0:
+            print("Завершение...")
+            break
+        else:
+            print("Недопустимое значение, попробуйте ещё раз")
+# spravochnik()
+#задание 2
+def book():
+    while True:
+        book_name = ["Игры в которые играют люди","Гарри Поттер и узник азкабана", "Мастер и Маргарита"]
+        book_years = [1999, 1988, 1937]
+        user_choice = int(input("Отсортировать книги по названию или по годам выпуска, или вам нужен начальный "
+                                "список? 1-3, 0 для выхода "))
+        if user_choice == 1:
+            book_name.sort()
+            print(book_name)
+        elif user_choice == 2:
+            book_years.sort()
+            print(book_years)
+        elif user_choice == 3:
+            print(f"Названия книг {book_name} \n"
+                  f"Года выпуска {book_years}")
+        elif user_choice == 0:
+            print("До скорой встречи!")
+            break
+        else:
+            print("Неккоректное значение")
+book()
