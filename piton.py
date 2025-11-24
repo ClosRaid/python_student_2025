@@ -1225,4 +1225,64 @@ def book():
             break
         else:
             print("Неккоректное значение")
-book()
+# book()
+
+#задание до 24.11
+#задание 1
+def task1():
+    list1 = [2,1,4,3]
+    list2 = [7,5,8,6]
+    list3 = [12,11,10,9]
+    list4 = [14,16,13,15]
+    list5 = list1 + list2 + list3 + list4
+    print(list5)
+    user_choice = int(input(f"{list5} Отсортировать по возрастанию или убыванию? 1-2 "))
+    if user_choice == 1:
+        list5.sort()
+        print(list5)
+    elif user_choice == 2:
+        list5.sort(reverse=True)
+        print(list5)
+    else:
+        print("Неверное значение")
+    user_number = int(input("Введите значение от 1 до 16 "))
+    for i in len(list5):
+        if user_number == i:
+            print(f"Ваше число {i}")
+# task1()
+#задание 2
+def task2():
+    #создание списка
+    list1 = [2, 1, 5, 3]
+    list2 = [3, 8, 1, 6]
+    list3 = [9, 0, 5, 4]
+    list4 = [4, 1, 7, 5]
+    list5 = []
+    for num in list1:
+        if num not in list2 not in list3 not in list4:
+            list5.append(num)
+    for num1 in list2:
+        if num1 not in list1 not in list3 not in list4:
+            list5.append(num1)
+    for num2 in list3:
+        if num2 not in list1 not in list2 not in list4:
+            list5.append(num2)
+    for num3 in list4:
+        if num3 not in list1 not in list2 not in list3:
+            list5.append(num3)
+            continue
+    print(list5)
+    #сортировка
+
+    choice = int(input(f"Отсортировать список {list5} по возрастанию или убыванию? 1-2"))
+    if choice == 1:
+        list5.sort()
+        print(list5)
+    elif choice == 2:
+        list5.sort(reverse=True)
+        print(list5)
+    else:
+        print("Неверное значение")
+
+
+task2()
