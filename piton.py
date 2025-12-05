@@ -1284,5 +1284,109 @@ def task2():
     else:
         print("Неверное значение")
 
+#практика 2 задание 1
+def basketball():
+    name = {1: "Майкл Джеффри Джордан, рост 198 см",
+            2:"Коби Джо Брайант, рост 198 см",
+            3:"Леброн Рэймон Джеймс, рост 206 см"}
+    print(name)
+    user_choice = int(input("Выберите действие для продолжения: Добавление, удаление, замена данных 1-3 "))
+    if user_choice == 1:
+        user_value = input("Введите имя для добавления")
+        name[4] = user_value
+        print(name)
+    elif user_choice == 2:
+        user_value = int(input(f"Выберите кого вы хотите удалить {name} 1-3"))
+        for key,value in name.items():
+            if value == user_value:
+                name.pop(user_value)
+    elif user_choice == 3:
+        user_key = int(input(f"Выберите значение того кого хотите изменить {name} 1-3 "))
+        user_value = input(f"выберите кого хотите изменить {name} ")
+        name.update({user_key:f"{user_value}"})
+        print(name)
+    else:
+        print("неккоректное значение")
+#задание 2
+def slovar():
+    dictionary = {"hello":"salut", "you":"vous", "name":"nom"}
+    print(dictionary)
+    user_choice = int(input("Выберите действие для продолжения: Добавление, удаление, замена данных 1-3 "))
+    if user_choice == 1:
+        user_value_en = input("Введите слово для добавления на английском")
+        user_value_fr = input("Введите слово для добавления на французском")
+        dictionary[user_value_en] = user_value_fr
+        print(dictionary)
+    elif user_choice == 2:
+        user_key = input("Выберите слово для удаления ")
+        dictionary.pop(user_key)
+        print(dictionary)
+    elif user_choice == 3:
+        user_key = input("Выберите слово для замены ")
+        user_word = input("На какое слово заменить?")
+        dictionary[user_key] = user_word
+    else:
+        print("Неккоректное значение")
+#задание 3
+def company():
+    employee = {"Антон": {"Телефон":"+79960843012", "Почта":"AntonDersh@gmail.com","Должность":"Менеджер по продажам",
+                "Номер кабинета":"34 каб. на 2 этаже", "Скайп":"AntonDersh"},
+                "Елена": {"Телефон": "+7096921234", "Почта": "ElizovetaNets@mail.ru",
+                          "Должность": "Директор отдела маркетинга",
+                          "Номер кабинета": "79 каб. на 3 этаже", "Скайп": "ElizovetaNets"},
+                "Денис": {"Телефон": "+79923021919", "Почта": "Denisss@inbox.ru",
+                          "Должность": "Аналитик рынка",
+                          "Номер кабинета": "22 каб. на 2 этаже", "Скайп": "Denchikk"}
+                }
+    print(employee)
+    user_choice = int(input("Выберите действие для продолжения: Добавление, поиск, удаление, замена данных 1-4 "))
+    if user_choice == 1:
+        user_employee = input("Введите имя сотрудника для добавления")
+        user_employee_info = input("Введите данные сотрудника")
+        employee[user_employee] = user_employee_info
+        print(employee)
+    elif user_choice == 2:
+        for key,value in employee.items():
+            user_key = input("Выберите имя сотрудника для вывода всех данных только о нём")
+            if key == user_key:
+                print(key, value)
+    elif user_choice == 3:
+        user_key = input("Выберите сотрудника для удаления ")
+        employee.pop(user_key)
+        print(employee)
+    elif user_choice == 4:
+        user_key = input("Выберите сотрудника для замены ")
+        user_word = input("На какое слово заменить?")
+        employee.update(user_word)
+    else:
+        print("Неккоректное значение")
 
-task2()
+#задание 4
+def book():
+    books = {"Гарри поттер и филосовский камень": {"Автор":"Джоан Роулинг", "Год выпуска":"1997", "жанр":"фентези",
+            "кол-во страниц":"432 страницы", "Издательство":"<Махаон> и <Азбука-Аттикус>"},
+             "Найди меня если сможешь": {"Автор": "Меган Миранда", "Год выпуска": "2019", "жанр": "триллер",
+                                                   "кол-во страниц": "350 страницы",
+                                                   "Издательство": "Clever"}}
+    print(books)
+    user_choice = int(input("Выберите действие для продолжения: Добавление, поиск, удаление, замена данных 1-4 "))
+    if user_choice == 1:
+        user_employee = input("Введите имя книги для добавления")
+        user_books_info = input("Введите данные книги")
+        books[user_employee] = user_books_info
+        print(books)
+    elif user_choice == 2:
+        for key, value in books.items():
+            user_key = input("Выберите название книги для вывода информации только о ней")
+            if key == user_key:
+                print(key, value)
+    elif user_choice == 3:
+        user_key = input("Выберите книгу для удаления ")
+        books.pop(user_key)
+        print(books)
+    elif user_choice == 4:
+        user_key = input("Выберите книгу для замены ")
+        user_word = input("На какое слово заменить?")
+        books.update(user_word)
+    else:
+        print("Неккоректное значение")
