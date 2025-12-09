@@ -528,19 +528,19 @@ import random
 # lists = [1,2,3,4]
 # tuple = (7,8,9)
 # new_set = sets.union(lists.tuples, fset)
-
-#set.intersection()
-#set.difference()
-#set.symmetric_difference()
-#set.copy()
-#set.intersection_update
-#set.symmetric_difference_update
-#set.add()
-#set.remove()
-#set.discard()
-#set.pop()
-#set.clear()
-
+'''
+set.intersection()
+set.difference()
+set.symmetric_difference()
+set.copy()
+set.intersection_update
+set.symmetric_difference_update
+set.add()
+set.remove()
+set.discard()
+set.pop()
+set.clear()
+'''
 
 #есть стопка оладий различного радиуса, единственная операция с ними - между двумя оладиями просунуть лопатку и
 #поменять порядок оладий над лопаткой на обратный
@@ -1398,7 +1398,7 @@ def book():
 import random
 from sympy.physics.units import frequency
 
-
+#задание 5
 class resistors:
     def __init__(self, r1,r2):
         self.r1 = r1
@@ -1529,6 +1529,54 @@ import random
 #     people.show_my_drink()
 #
 # main()
+#задание 4
+# class TriangleChecker():
+#     def number(self,num1,num2,num3):
+#         self.num1 = num1
+#         self.num2 = num2
+#         self.num3 = num3
+#     def is_triangle(self):
+#         if self.num1 and self.num2 and self.num3 >= 1:
+#             print("Треугольник можно строит!")
+#         elif self.num1 or self.num2 or self.num3 <= 0:
+#             print("С такими числами ничего не выйдет!")
+#         elif self.num1 and self.num2 and self.num3 == "":
+#             print("С буквами ничего не выйдет!")
+#задание 5
+class nikola():
+    def name(self,name,age):
+        self.name = name
+        self.age = age
+    def checkName(self):
+        if self.name == "Николай":
+            print("Приветствую Николай!")
+        elif self.name != "Николай":
+            print(f"Я не {self.name}, я Николай!")
+#задание 6
+class programmist():
+    def name(self,name,job):
+        self.name = name
+        self.job = job
+    def work(self):
+        self.junior = "junior"
+        self.middle = "middle"
+        self.Senior = "Senior"
+        self.programmer = [self.name,self.job]
+        self.time = int(input("Сколько часов отработал программист?"))
+        self.programmer.append(self.time)
+    def rise(self):
+        if self.job == self.junior:
+            self.programmer.pop()
+            self.programmer.append(self.middle)
+            self.oklad = 15
+        if self.job == self.middle:
+            self.programmer.pop()
+            self.programmer.append(self.Senior)
+            self.oklad = 20
+        if self.job == self.Senior:
+            print("Некуда повышать, сотрудник уже достиг высочайшей должности")
+    def info(self):
+        print(f"{self.programmer}, {self.time}, {self.time * self.oklad}")
 
 #задание 7
 # class person:
@@ -1580,6 +1628,8 @@ class npc:
             print(f"перед тобой 1 волна")
             choice2 = input("Атаковать или сдаться?")
             if choice2 == "Атаковать":
+                if self.choice == "маг":
+                    self.mana -= 5
                 self.hp -= 10
             elif choice2 == "сдаться":
                 print("Вы проиграли!")
