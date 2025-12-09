@@ -1014,6 +1014,8 @@ file.writelines(line) - обавление строк в файл
 
 #задание до 22.11
 #задание 1
+
+#практика 1
 def numbers():
     number_1 = [random.randint(1, 100) for i in range(5)]
     number_2 = [random.randint(1, 100) for i in range(5)]
@@ -1181,6 +1183,7 @@ def main():
 
 #задание до 23.11
 #задание 1
+#практика 2
 def spravochnik():
     while True:
         id_code = [78,77,75,34,112]
@@ -1229,6 +1232,7 @@ def book():
 
 #задание до 24.11
 #задание 1
+#практика 3
 def task1():
     list1 = [2,1,4,3]
     list2 = [7,5,8,6]
@@ -1390,3 +1394,196 @@ def book():
         books.update(user_word)
     else:
         print("Неккоректное значение")
+
+import random
+from sympy.physics.units import frequency
+
+
+class resistors:
+    def __init__(self, r1,r2):
+        self.r1 = r1
+        self.r2 = r2
+    def parallel(self):
+        r_par = (self.r1 * self.r2) / (self.r1 + self.r2)
+        print(f"Общее сопротивление двух резисторов {r_par}")
+    def consec(self,r1,r2,r3):
+        r_posl = r1 + r2 + r3
+        print(f"Общее сопротивление равно {r_posl} ")
+#практика 8
+class simplestatistics:
+    def mean(self, simple_list):
+        sum = 0
+        for i in (simple_list):
+            sum += i
+        return summ/len(simple_list)
+    @staticmethod
+    def median(self,simple_list):
+        #вычисление медианы
+        simplelist = sorted(simple_list)
+        n = len(simple_list)
+        mid = n // 2
+        if n % 2 == 0:
+            return (simple_list[mid - 1] + simple_list[mid])/2
+    @staticmethod
+    # def mode(self,simplelist):
+    #     #вычисление моды
+    #     simple_dict = {simple_list[i] : 0 for i in range(len(simple_list))}
+    #     for i in range(len(simple_list)):
+    #         for j in range(len(simple_list)):
+    #             if simple_dict[i] == simplelist[j]:
+    #     for i in range(len(simple_dict)):
+    #         if max < simple_dict[i]:
+    #             max = simple_dict[i]
+    #         return
+    #     @staticmethod
+    def range(self):
+        pass
+    def variance(self):
+        pass
+    def standart_deviation(self):
+        pass
+# simple = simplestatistics()
+# simple_list = (random.randint(-50,50))
+
+#задание 2
+# class FrequencyDistribution:
+#     #подсчёт частоты каждого уникального элемента в данных
+#     #результат хранить как словарь: элемент частота
+#     def calculate_frequency(self,mylist):
+#         mydict = {1 : 0 for i in set(mylist)}
+#         print(f"Вывод до подсчёта {mydict}")
+#         for i in range(len(mylist)):
+#             for j in range(len(mylist)):
+#                 if mylist[i] == mylist[j]:
+#                     mydict[i] += 1
+#         print(f"После подсчёта {mydict}")
+#         self.display_frequency_table(mydict)
+#     @staticmethod
+#     #вывод таблицы частот в читаемом формате
+#     def display_frequency_table(self):
+#         #*****************
+#         #|элемент|частота|
+#         #|   0   |   3   |
+#         #*****************
+#         print("*"*17)
+#         print("|элемент|частота|")
+#
+#         for key, value in mydict.items():
+#             print(f"|   {key}   |   {value}   |")
+#         print("*"*17)
+#         self.get_most_frequent(mydict)
+#     # возвращает элементы с большей частотой
+#     def get_most_frequent(self):
+#         max = -10
+#         for i in mydict.values()
+#             if i > max:
+#                 max = i
+#         print(f"Наибольшее число вхождений по таблице : {max}")
+# mylist = [random.randint(-5,5) for i in range(10)]
+# FrequencyDistribution.calculate_frequency(mylist)
+
+#практика 6 (всего 7 заданий)
+#Задание 1 линейный поиск или list.index
+import random
+# number = []
+# for i in range(10):
+#     number.append(i)
+# print(number)
+# user_number = int(input("Введите число от 0 до 10 "))
+# if user_number >= 0 and user_number <= 10:
+#     for j in range(len(number)):
+#         if j == user_number:
+#             print(f"Ваше число {j}")
+# else:
+#     print(f"Ваше число недопустимо")
+#задание 2 бинарный поиск
+# number_binar = []
+# for i in range(10):
+#     number_binar.append(i)
+# print(number_binar)
+# user_number = int(input("Введите число от 0 до 10 "))
+#задание 3
+# class soda(dop):
+#     def __int__(self, name):
+#         self.name = name
+#     def choice_drink(self):
+#         drink = input(f"выберите напиток из предложенных:{all_drink}")
+#         for i in range(len(all_drink)):
+#             if i == drink:
+#                 return i
+#     def show_my_drink(self):
+#         if dop == 1 or 2 or 3:
+#             print(f"Ваш напиток = {self.i} {dop}")
+#         else:
+#             print("Standart soda")
+# def main():
+#     all_drink = ["Cola" + " Sprite" + " Fanta" + " 7up"]
+#     dobavka = ["Caramel " + "Chocolate " + "Vanilla sirop"]
+#     print(f"Напитки: {all_drink}, Добавки: {dobavka}")
+#     choice_dop = int(input("выберите добавку введя от 1 до 3: "))
+#
+#     People = soda()
+#     people = soda(choice_dop)
+#     people.init()
+#     people.choice_drink()
+#     people.show_my_drink()
+#
+# main()
+
+#задание 7
+# class person:
+#     def __init__(self,name):
+#         self.__name = name
+#     def getname(self):
+#         return self.__name
+#     def display_info(self):
+#         print(f"Name: {self.getname()}")
+# class Employee(person):
+#     def __init__(self,name,time):
+#         super().__init__(name)
+#         self.__time = time
+#     def work(self):
+#         print(f"{self.getname()} works {self.__time} hours")
+# class student:
+#     def study(self):
+#         print("student, studies")
+# class workingStudent(Employee, student):
+#     pass
+# #main
+# def main():
+#     # tom = Employee("Tom", 10)
+#     # tom.work()
+#     # tom.getname()
+#     # tom.display_info()
+#     tom = workingStudent("Tom")
+#     tom.work()
+#     tom.study()
+# if __name__ == "__main__":
+#     main()
+class npc:
+    def name(self,name):
+        self.name = name
+    def stats(self):
+        self.hp = 100
+        choice = input("Ты маг или войн?")
+        if choice == "маг":
+            choice = "маг"
+            mana = 100
+            damage = 10
+        elif choice == "войн":
+            choice = "войн"
+            damage = 7
+    def event(self):
+        while True:
+            print(f"Приветствую тебя {self.name}")
+            print(f"Ты попал в магический мир, ты должен выжить 10 волн")
+            print(f"перед тобой 1 волна")
+            choice2 = input("Атаковать или сдаться?")
+            if choice2 == "Атаковать":
+                self.hp -= 10
+            elif choice2 == "сдаться":
+                print("Вы проиграли!")
+                break
+
+
+
